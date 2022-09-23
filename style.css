@@ -29,7 +29,31 @@ SELETOR POR ATRIBUTO
 SELETOR POR PSEUDO-CLASSE
     a:hover {
         background-color: #fff;
-    }    
+    }
+    
+==================================
+==================================
+==================================
+
+COMBINADOR DESCENDENTE -> Com o espaço em branco estamos selecionando todas as tags inputs que estão dentro de um form.
+    form input { 
+        background-color: #fff;
+    }
+
+COMBINADOR FILHO DIRETO -> Com o > estamos selecionando todas as tags inputs que estão diretamente dentro de um form.
+    form > input { 
+        background-color: #fff;
+    }
+
+COMBINADOR FILHO ADJACENTE -> Com o + estamos selecionando todas as tags inputs que estão diretamente após um form.
+    form + input { 
+        background-color: #fff;
+    }
+
+COMBINADOR IRMÃO GERAL -> Com o ~ estamos selecionando todas as tags inputs que estão após um form.
+    form ~ input { 
+        background-color: #fff;
+    }
 */
 
 #first > .bloco {
@@ -42,13 +66,53 @@ body {
     background-color: #17181c;
     color: #fff;
     font-family: sans-serif;
+    margin: 0;
+    height: 200vh;
 }
 
 .pulse {
+    position: relative;
     background: none;
     color: #ff760c;
     border: 2px solid;
-    margin: 50px;
+    top: 100px;
+    left: 300px;
+    padding: 15px 40px;
+    transition: .25s;
+}
+
+.pulse_2 {
+    position: fixed;
+    background: none;
+    color: #ff760c;
+    border: 2px solid;
+    top: 100px;
+    left: 300px;
+    padding: 15px 40px;
+    transition: .25s;
+}
+
+#posicao {
+    position: relative;
+    left: 100px;
+    top: 100px;
+    width: 300px;
+    height: 100px;
+    background-color: #f00;
+    overflow: hidden;
+}
+
+#posicao:hover .pulse_3 {
+    bottom:0;
+}
+
+.pulse_3 {
+    position: absolute;
+    background: none;
+    color: #ff760c;
+    border: 2px solid;
+    bottom: -100px;
+    left: 0;
     padding: 15px 40px;
     transition: .25s;
 }
@@ -65,4 +129,12 @@ body {
         box-shadow: 0 0 0 0 #ef8f6e;
     }
  
+}
+
+#stick {
+    width: 100%;
+    height: 100px;
+    background-color: #ef8f6e;
+    position: sticky;
+    top: 0;
 }
